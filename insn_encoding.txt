@@ -1,0 +1,88 @@
+MOV A, imm8		0010 1101 iiii iiii	2Dii
+MOV A, mem8		0001 1110 mmmm mmmm	1Emm
+MOV mem8, A		0001 1111 mmmm mmmm	1Fmm
+
+B0MOV A, mem8		0010 1110 mmmm mmmm	2Emm
+B0MOV mem8, A		0010 1111 mmmm mmmm	2Fmm
+B0MOV mem3, imm8        0011 0mmm iiii iiii	3mii
+
+XCH A, mem8		0010 1100 mmmm mmmm	2Cmm
+
+B0XCH A, mem8		0000 0010 mmmm mmmm	02mm
+
+MOVC			0000 1101 0000 0000	0D00
+
+ADC A, mem8		0001 0000 mmmm mmmm	10mm
+ADC mem8, A		0001 0001 mmmm mmmm	11mm
+
+ADD A, mem8		0001 0010 mmmm mmmm	12mm
+ADD mem8, A		0001 0011 mmmm mmmm	13mm
+ADD A, imm8		0001 0100 iiii iiii	14ii
+
+B0ADD mem8, A		0000 0011 mmmm mmmm	03mm
+
+SBC A, mem8		0010 0000 mmmm mmmm	20mm
+SBC mem8, A		0010 0001 mmmm mmmm	21mm
+
+SUB A, mem8		0010 0010 mmmm mmmm	22mm
+SUB mem8, A		0010 0011 mmmm mmmm	23mm
+SUB A, imm8		0010 0100 iiii iiii	24ii
+
+DAA			0000 1100 0000 0000	0C00
+
+MUL A, mem8		0011 1000 mmmm mmmm	38mm
+
+AND A, mem8		0010 1000 mmmm mmmm	28mm
+AND mem8, A		0010 1001 mmmm mmmm	29mm
+AND A, imm8		0010 1010 iiii iiii	2Aii
+
+OR A, mem8		0001 1000 mmmm mmmm	18mm
+OR mem8, A		0001 1001 mmmm mmmm	19mm
+OR A, imm8		0001 1010 iiii iiii	1Aii
+
+XOR A, mem8		0001 1011 mmmm mmmm	1Bmm
+XOR mem8, A		0001 1100 mmmm mmmm	1Cmm
+XOR A, imm8		0001 1101 iiii iiii	1Dii
+
+SWAP A, mem8		0001 0111 mmmm mmmm	17mm
+SWAPM mem8		0010 0111 mmmm mmmm	27mm
+
+RLC A, mem8		0000 1010 mmmm mmmm	0Amm
+RLCM mem8               0000 1011 mmmm mmmm	0Bmm
+
+RRC A, mem8		0000 1000 mmmm mmmm	08mm
+RRCM mem8               0000 1001 mmmm mmmm	09mm
+
+CLR mem8		0010 1011 mmmm mmmm	2Bmm
+
+BCLR mem8.bit3		0100 0bbb mmmm mmmm	4bmm
+B0BCLR mem8.bit3	0110 0bbb mmmm mmmm	6bmm
+
+BSET mem8.bit3		0100 1bbb mmmm mmmm	48|bmm
+B0BSET mem8.bit3	0110 1bbb mmmm mmmm	68|bmm
+
+CMPRS A, imm8		0000 0110 iiii iiii	06ii
+CMPRS A, mem8		0000 0111 mmmm mmmm	07mm
+
+INCS A, mem8		0001 0101 mmmm mmmm	15mm
+INCMS mem8		0001 0110 mmmm mmmm	16mm
+
+DECS A, mem8		0010 0101 mmmm mmmm	25mm
+DECMS mem8		0010 0110 mmmm mmmm	26mm
+
+BTS0 mem8.bit3		0101 0bbb mmmm mmmm	5bmm
+B0BTS0 mem8.bit3	0111 0bbb mmmm mmmm	7bmm
+
+BTS1 mem8.bit3		0101 1bbb mmmm mmmm	58|bmm
+B0BTS1 mem8.bit3	0111 1bbb mmmm mmmm	78|bmm
+
+JMP adr14		10aa aaaa aaaa aaaa
+CALL adr14		11aa aaaa aaaa aaaa
+
+RET			0000 1110 0000 0000	0E00
+RETI			0000 1111 0000 0000	0F00
+
+NOP			0000 0000 0000 0000	0000
+
+PUSH			0000 0100 0000 0000	0400
+POP			0000 0101 0000 0000	0500
